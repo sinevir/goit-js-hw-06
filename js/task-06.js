@@ -12,16 +12,11 @@ const inputSymbols = document.querySelector("#validation-input");
 const validInput = document.querySelector("#validation-input.valid");
 const invalidInput = document.querySelector("#validation-input.invalid");
 
-
 function onInputBlur(event) {
-    let inputLength = ( event.currentTarget.value ).length;
-    console.log();
-    if ( inputLength === 6 ) {
-        console.log('Green');
+    if ( event.currentTarget.value.length == inputSymbols.getAttribute('data-length') ) {
         inputSymbols.classList.remove('invalid');
         inputSymbols.classList.add('valid');
     } else {
-        console.log('Red');
         inputSymbols.classList.add('invalid');
     }
 }

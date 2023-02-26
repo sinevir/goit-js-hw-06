@@ -18,14 +18,10 @@
  * Elements: 5
 */ 
 
-const categoriesList = document.querySelector("ul#categories");
+const categoriesList = document.querySelectorAll(".item");
+console.log(`Number of categories: ${categoriesList.length}`);
 
-const categoriesItems = categoriesList.querySelectorAll("li.item");
-console.log(`Number of categories: ${categoriesItems.length}`);
-
-categoriesItems.forEach(item => {
-    const categoriesName = item.querySelector('h2').textContent;
-    const categoriesEl = item.querySelectorAll('li').length;
-    console.log(`Category: ${categoriesName}`);
-    console.log(`Elements: ${categoriesEl}`);
+categoriesList.forEach(item => {
+    console.log(`Category: ${item.firstElementChild.textContent}`);
+    console.log(`Elements: ${item.lastElementChild.children.length}`);
 });
