@@ -23,10 +23,6 @@ const images = [
 
 const gallery = document.querySelector('.gallery');
 
-// const elements = images.map(image => {
-
-// });
-
 const elements = images.map(({ url, alt }) => {
   return `<li><img class="images" src=${url} alt=${alt} width=360></li>`
 })
